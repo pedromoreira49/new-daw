@@ -100,6 +100,35 @@
 	margin-top: 10px;
 }
 
+.form-style-6 p{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	margin-top: 10px;
+	background: #43D1AF;
+	border-bottom: 2px solid #30C29E;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: #fff;
+	text-align: center;
+}
+
+.form-style-6 a{
+	text-decoration: none;
+	color: white;
+}
+
+.card{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+}
+
 .w50{
 	width: 50%;
 	float: left;
