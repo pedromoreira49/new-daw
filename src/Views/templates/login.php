@@ -12,10 +12,10 @@
 	<form method="post">
 		<input type="text" name="email" placeholder="Email" />
 		<input type="password" name="pass" placeholder="Senha" />
-		<input type="submit" value="Entrar" />
+		<input type="submit" name="acao" value="Entrar" />
 		<input type="hidden" name="login">
 	</form>
-	<input type="button" value="Registrar-se" onclick="">
+	<p><a href="<?php echo INCLUDE_PATH ?>register">Register</a></p>
 </div>
 </body>
 </html>
