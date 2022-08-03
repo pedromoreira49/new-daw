@@ -23,28 +23,45 @@
 </div>
 
 <?php
-	$produtos = \src\Models\HomeModel::getAllProducts();
-	$category = \src\Models\HomeModel::getCategory();
-	$categorias = array();
-	foreach ($category as $key => $value){
-		$categorias[$key]['idcategoria'] = $value['idcategoria'];
-		$categorias[$key]['nome'] = $value['nome'];
-	}
-	foreach ($produtos as $key => $value) {
-		$produto = $produtos[$key]['idcategoria'];
+
+	if(isset($_POST['procurar'])){
+		if($_POST['produto'] != ''){
+			$produtos = \src\Models\HomeModel::getProductsByName($_POST['produto']);
+
+			foreach($produtos as $key => $value){
 ?>
-	<div class="form-style-6">
-		<div class="w50 center"><h1><?php echo $value['nome']; ?></h1></div>
-		<div class="w50 center"><h1>Quantidade: <?php echo $value['quantidade']; ?></h1></div>
-	</div>
-	<div class="card"><p><?php echo $value['descricao']; ?></p></div>
-	<div class="card"><p><?php foreach($categorias as $key => $value) {
-		if($produto == $value['idcategoria']){
-			echo $value['nome'];
-		}
-	}
-	?></p></div>
+				<div class="form-style-6">
+				<div class="w50 center"><h1><?php echo $value['nome']; ?></h1></div>
+				<div class="w50 center"><h1>Quantidade: <?php echo $value['quantidade']; ?></h1></div>
+				</div>
+				<div class="card"><p><?php echo $value['descricao']; ?></p></div>
 <?php
+			}
+		}else{
+			$produtos = \src\Models\HomeModel::getAllProducts();
+			$category = \src\Models\HomeModel::getCategory();
+			$categorias = array();
+			foreach ($category as $key => $value){
+				$categorias[$key]['idcategoria'] = $value['idcategoria'];
+				$categorias[$key]['nome'] = $value['nome'];
+			}
+			foreach ($produtos as $key => $value) {
+				$produto = $produtos[$key]['idcategoria'];
+?>
+				<div class="form-style-6">
+					<div class="w50 center"><h1><?php echo $value['nome']; ?></h1></div>
+					<div class="w50 center"><h1>Quantidade: <?php echo $value['quantidade']; ?></h1></div>
+				</div>
+				<div class="card"><p><?php echo $value['descricao']; ?></p></div>
+				<div class="card"><p><?php foreach($categorias as $key => $value) {
+					if($produto == $value['idcategoria']){
+						echo $value['nome'];
+					}
+				}
+			?></p></div>
+<?php
+			}
+		}
 	}
 ?>
 
