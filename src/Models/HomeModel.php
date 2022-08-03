@@ -18,6 +18,8 @@
 			$produtos = $pdo->prepare("SELECT * FROM produtos WHERE nome LIKE ?");
 
 			$produtos->execute(array($name));
+
+			return $produtos->fetchAll();
 		}
 
 		public static function getCategory(){
@@ -29,8 +31,5 @@
 
 			return $categorias->fetchAll();
 		}
-
 	}
-
-
 ?>
