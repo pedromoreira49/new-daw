@@ -2,7 +2,7 @@
 
 	namespace src\Models;
 
-	class VerifyModel{
+	class VerifyModels{
 
 		public static function genCode(){
 			$numbers = "0123456789";
