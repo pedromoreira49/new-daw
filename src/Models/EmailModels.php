@@ -32,8 +32,10 @@
                 $mail->setFrom($_ENV['MAILER_AUTH'],'Adm Site');
                 $mail->addAddress($email, $nome );
                 $mail->Subject = 'Verify Email';
-                $mail->Body = "Your code is: ". \src\Models\VerifyModels::genCode();
+                $code = \src\Models\VerifyModels::genCode();
+                $mail->Body = "Your code is: ".$code;
                 $mail->send();
+                return $code;
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
