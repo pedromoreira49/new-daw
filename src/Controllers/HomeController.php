@@ -20,7 +20,7 @@
 					$login = $_POST['email'];
 					$senha = $_POST['pass'];
 
-					$verifica = \src\Mysql::connect()->prepare("SELECT * FROM usuarios WHERE email = ?");
+					$verifica = \src\Mysql::connect()->prepare("SELECT * FROM usuarios WHERE email = ? AND status = 1");
 					$verifica->execute(array($login));
 
 					if($verifica->rowCount() == 0){
