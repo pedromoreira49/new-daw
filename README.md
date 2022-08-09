@@ -21,7 +21,7 @@ create table usuarios (
 -> idusuario int(6) auto_increment primary key,
 -> nome varchar(60) not null,
 -> email varchar(80) not null,
--> senha varchar(30) not null,
+-> senha text not null,
 -> foto varchar(20),
 -> tipousuario int(6) not null default 1,
 -> status boolean not null default false);
