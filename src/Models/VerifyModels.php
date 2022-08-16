@@ -20,6 +20,11 @@
 			return $pass;
 		}
 
+		public static function genHash($email){
+			$hash = md5($email);
+			return $hash;
+		}
+
 	}
 
 
