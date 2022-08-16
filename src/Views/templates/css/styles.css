@@ -18,7 +18,7 @@
 	font-weight: 300;
 	text-align: center;
 	color: #fff;
-	margin: -16px -16px 16px -16px;
+	margin: -16px 0px 16px 0px;
 }
 .form-style-6 input[type="text"],
 .form-style-6 input[type="date"],
@@ -131,6 +131,11 @@
 
 .w50{
 	width: 50%;
+	float: left;
+}
+
+.w33{
+	width: 33.3%;
 	float: left;
 }
 
