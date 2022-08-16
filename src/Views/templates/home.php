@@ -9,11 +9,14 @@
 </head>
 <body>
 <div class="form-style-6">
-	<div class="w50 center">
+	<div class="w33 center">
+		<h1><a href="<?php echo INCLUDE_PATH ?>config"><i class="fa fa-cog" aria-hidden="true"></i></a></h1>
+	</div>
+	<div class="w33 center">
 		<h1>Olá, <?php echo $_SESSION['nome'];?></h1>
 	</div>
-	<div class="w50 center">
-		<h1><a href="<?php echo INCLUDE_PATH ?>?loggout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></h1>
+	<div class="w33 center">
+		<h1><a href="<?php echo INCLUDE_PATH ?>?loggout"><i class="fa fa-sign-out" aria-hidden="true"></i></a></h1>
 	</div>
 	<form method="post">
 		<input type="text" name="produto" placeholder="Pesquisar produtos" />
