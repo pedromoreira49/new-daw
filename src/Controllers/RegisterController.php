@@ -31,8 +31,8 @@
 							if($size <= 500){
 								$uniqueID = uniqid().'.'.$fileExt;
 								$_SESSION['code'] = \src\Models\EmailModels::sender($email, $nome);
-								$sql = \src\Mysql::connect()->prepare("INSERT INTO usuarios VALUES (?, ?, ?, ?, ?, ?, ?)");
-								$sql->execute(array(null, $nome, $email, $password, $uniqueID, 1, 1));
+								$sql = \src\Mysql::connect()->prepare("INSERT INTO usuarios VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+								$sql->execute(array(null, $nome, $email, $password, $uniqueID, 1, 1, null));
 								move_uploaded_file($image['tmp_name'], 'c:/xampp/htdocs/new-daw/uploads/'.$uniqueID);
 								$_SESSION['email'] = $email;
 								\src\Utils::alerta('Verifique sua caixa de email');
@@ -47,8 +47,8 @@
 						}
 					}else{
 						$_SESSION['code'] = \src\Models\EmailModels::sender($email, $nome);
-						$sql = \src\Mysql::connect()->prepare("INSERT INTO usuarios VALUES (?, ?, ?, ?, ?, ?, ?)");
-						$sql->execute(array(null, $nome, $email, $password, null, 1, 0));
+						$sql = \src\Mysql::connect()->prepare("INSERT INTO usuarios VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+						$sql->execute(array(null, $nome, $email, $password, null, 1, 0, null));
 						$_SESSION['email'] = $email;
 						\src\Utils::alerta('Verifique sua caixa de email');
 						\src\Utils::redirect(INCLUDE_PATH.'verifyCode');
