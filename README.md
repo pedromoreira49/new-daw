@@ -24,6 +24,7 @@ create table usuarios (
 -> senha text not null,
 -> foto varchar(20),
 -> tipousuario int(6) not null default 1,
--> status boolean not null default false);
+-> status boolean not null default false
+-> random_code text);
 
 ```
