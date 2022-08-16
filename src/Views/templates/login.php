@@ -16,6 +16,7 @@
 		<input type="hidden" name="login">
 	</form>
 	<p><a href="<?php echo INCLUDE_PATH ?>register">Register</a></p>
+	<p><a href="<?php echo INCLUDE_PATH ?>forgot">Forgot password</a></p> 
 </div>
 </body>
 </html>
