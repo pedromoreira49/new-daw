@@ -11,6 +11,7 @@
 	<h1>Configurations:</h1>
 	<form>
 		<p><a href="<?php echo INCLUDE_PATH; ?>configchangepass">Change password</a></p>
+		<p><a href="<?php echo INCLUDE_PATH; ?>configcep">Your location</a></p>
 	</form>
 </div>
 </body>
